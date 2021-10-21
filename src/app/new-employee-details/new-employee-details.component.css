@@ -1,0 +1,30 @@
+.bgcolor {
+    background-color: rgb(174, 174, 187);
+}
+.ptext {
+   color:  rgb(87,100,126);
+}
+.example-full-width {
+width: 100%;
+}
+.matinput {
+    width: 50%;
+}
+.label {
+    color: grey;
+    margin-top: -15px;
+    font-size: small;
+}
+h6 {
+    /* margin-bottom: 10px; */
+    margin-top: 30px;
+}
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }
