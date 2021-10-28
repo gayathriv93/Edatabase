@@ -1,1 +1,84 @@
-<p>contact-us works!</p>
+<section class="container contactbg w-100 h-100">
+    <div class="row justify-content-center">
+        <section class="col-12 col-md-6 m-5  " >
+
+            <div class="card text-primary " style="background: transparent ;">
+                <div class="card-header text-center">
+                    <h1 class="text-primary">
+                        Contact-Us
+
+                    </h1>
+
+                </div>
+                <div class="card-body">
+                    <form class="m-3">
+                        <h3>
+                            Send Us a message
+                        </h3>
+                        <p class="text-white">Contact us today using this form and our support team will reach out
+                            as soon as possible.</p>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="col-12 label ">
+                                    <mat-label>Full Name</mat-label>
+                                </div>
+                                <div class="col-12 matinput">
+                                    <mat-form-field class="mt-2" appearance="fill">
+                                        <mat-label class="text-white">Enter your full name</mat-label>
+                                        <input matInput placeholder="Placeholder">
+                                    </mat-form-field>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="col-12 label ">
+                                    <mat-label>Email Address </mat-label>
+                                </div>
+                                <div class="col-12 matinput">
+                                    <mat-form-field class="mt-2" appearance="fill">
+                                        <mat-label class="text-white">Enter your email</mat-label>
+                                        <input matInput placeholder="pat@example.com" [formControl]="email" required>
+                                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                                    </mat-form-field>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-12 ">
+                                <div class="col-12 ">
+                                    <mat-label>Your Phone Number</mat-label>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <mat-form-field class="matwidth" appearance="fill">
+                                        <mat-label class="text-white">Enter your phone number</mat-label>
+                                        <input matInput placeholder="Placeholder">
+                                    </mat-form-field>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 ">
+                                <div class="col-12 ">
+                                    <mat-label> Enter your message below</mat-label>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <mat-form-field class="matwidth" appearance="fill">
+                                        <mat-label class="text-white">Enter your message</mat-label>
+                                        <textarea matInput></textarea>
+                                    </mat-form-field>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class=" my-5">
+                            <button class="btn btn-success matwidth">Submit form </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>

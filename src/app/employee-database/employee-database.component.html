@@ -1,1 +1,68 @@
-<p>employee-database works!</p>
+<div class="w-100 bg-warning ">
+  <div class="row w-25 mx-auto  ">
+    <a href="newEmployeeDetails" class="btn btn-success m-5" type="button">ADD NEW Employee</a>
+  </div>
+  <div class="table-responsive container ">
+    <table  class="table table-bordered  ">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">eId</th>
+          <th scope="col">firstName</th>
+          <th scope="col">lastName</th>
+          <th scope="col">position</th>
+          <th scope="col">phoneNumber</th>
+          <th scope="col">email</th>
+          <th scope="col">dateofBirth</th>
+          <th scope="col">panNumber</th>
+          <th scope="col">salary</th>
+          <th scope="col">streetAddress</th>
+          <th scope="col">streetAddress2</th>
+          <th scope="col">city</th>
+          <th scope="col">state</th>
+          <th scope="col">postalCode</th>
+          <th scope="col">department</th>
+          <th scope="col">designation</th>
+          <th scope="col">joiningDate</th>
+          <th scope="col">bgStatus</th>
+          <th scope="col">workLocation</th>
+          <th scope="col">Action</th>
+
+
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tdata of data; let i=index">
+          <td>{{i+1}}</td>
+
+          <td>{{tdata.eId}}</td>
+          <td>{{tdata.firstName}}</td>
+          <td>{{tdata.lastName}}</td>
+          <td>{{tdata.position}}</td>
+          <td>{{tdata.phoneNumber}}</td>
+          <td>{{tdata.email}}</td>
+          <td>{{tdata.dateofBirth}}</td>
+          <td>{{tdata.panNumber}}</td>
+          <td>{{tdata.salary}}</td>
+          <td>{{tdata.streetAddress}}</td>
+          <td>{{tdata.streetAddress2}}</td>
+          <td>{{tdata.city}}</td>
+          <td>{{tdata.state}}</td>
+          <td>{{tdata.postalCode}}</td>
+          <td>{{tdata.department}}</td>
+          <td>{{tdata.designation}}</td>
+          <td>{{tdata.joiningDate}}</td>
+          <td>{{tdata.bgStatus}}</td>
+          <td>{{tdata.workLocation}}</td>
+          <td>
+            <a   class="btn text-primary" [routerLink]="['/', 'employee-Database', tdata._id ]"  (click)="onEdit(tdata._id)">Edit </a>
+            <button type="button" class="btn text-danger" (click)="onDelete(tdata._id)" >Delete </button>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

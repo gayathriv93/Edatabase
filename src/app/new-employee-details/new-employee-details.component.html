@@ -1,7 +1,7 @@
 <div class="container-fluid bgcolor">
-    <section class="row justify-content-center ">
+    <section class="row justify-content-center m-0 p-0 ">
         <!-- Heading Section -->
-        <div class=" border border-dark col-12 col-md-6 bg-white m-5 ">
+        <div class=" border border-dark col-12 col-md-8 bg-white  ">
             <section class="m-5 ">
                 <h2>
                     New Employee Onboarding
@@ -14,44 +14,49 @@
 
             <!-- Form Section -->
             <section class="row m-5">
-                <form>
+                <form [formGroup]="newEmployeeform" (ngSubmit)="onSubmit()">
                     <div class="row">
                         <section class="example-full-width" cellspacing="0">
                             <div class="row">
-                                <div class="col-12 col-md-6 matinput">
+                                <div class="col-12 col-md-6 ">
                                     <div class="col-12 matinput">
-                                        <mat-form-field appearance="fill">
-                                            <input matInput>
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Employee ID</mat-label>
+                                            <input matInput formControlName="eId">
                                         </mat-form-field>
                                     </div>
-                                    <div class="col-12 label ">
-                                        <mat-label>EID</mat-label>
+
+                                </div>
+                                <div class="col-12 col-md-6 matinput">
+                                    <div class="col-12 matinput">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Department</mat-label>
+
+                                            <input matInput formControlName="department">
+                                        </mat-form-field>
                                     </div>
                                 </div>
-</div>
+                            </div>
                             <div>
                                 <h6>Name</h6>
                             </div>
-      
+
                             <div class="row">
                                 <div class="col-12 col-md-6 matinput">
                                     <div class="col-12 matinput">
-                                        <mat-form-field appearance="fill">
-                                            <input matInput>
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>First Name</mat-label>
+
+                                            <input matInput formControlName="firstName">
                                         </mat-form-field>
-                                    </div>
-                                    <div class="col-12 label ">
-                                        <mat-label>First Name</mat-label>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="col-12 matinput">
-                                        <mat-form-field appearance="fill">
-                                            <input matInput>
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Last Name</mat-label>
+                                            <input matInput formControlName="lastName">
                                         </mat-form-field>
-                                    </div>
-                                    <div class="col-12 label">
-                                        <mat-label>Last Name</mat-label>
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +65,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <mat-form-field class="matinput" appearance="fill">
+                                    <mat-form-field class="matinput" appearance="outline">
                                         <input matInput>
                                     </mat-form-field>
                                 </div>
@@ -70,8 +75,9 @@
                             </div>
                             <div class="row">
                                 <div>
-                                    <mat-form-field class="matinput" appearance="fill">
-                                        <input matInput>
+                                    <mat-form-field class="matinput" appearance="outline">
+                                        <mat-label>Position</mat-label>
+                                        <input matInput formControlName="position">
                                     </mat-form-field>
                                 </div>
                             </div>
@@ -81,8 +87,9 @@
                             <div class="row">
                                 <div class="col-12 col-md-6">
                                     <div class="col-12 ">
-                                        <mat-form-field appearance="fill">
-                                            <input matInput>
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Contact Number</mat-label>
+                                            <input matInput formControlName="phoneNumber">
                                         </mat-form-field>
                                     </div>
                                     <div class="col-12 label ">
@@ -91,158 +98,225 @@
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="col-12">
-                                        <mat-form-field appearance="fill">
-                                            <input matInput>
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Email</mat-label>
+                                            <input matInput formControlName="email">
                                         </mat-form-field>
-                                    </div>
-                                    <div class="col-12 label">
-                                        <mat-label>Email</mat-label>
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <h6>PAN Number</h6>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="col-12 ">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>PAN Detail</mat-label>
+                                            <input matInput formControlName="panNumber">
+                                        </mat-form-field>
+                                    </div>
+
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="col-12">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Salary</mat-label>
+                                            <input matInput formControlName="salary">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <h6> Offered Designation </h6>
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <mat-form-field class="matinput" appearance="outline">
+                                        <mat-label>Designation</mat-label>
+                                        <input matInput formControlName="designation">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <!-- <div class="row">
+
+                                <div class="col-12 ">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Choose a date</mat-label>
+                                        <input matInput [matDatepicker]="picker">
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-12 label ">
+                                    <mat-label> Date of Birth</mat-label>
+                                </div>
+
+                            </div> -->
                             <div class="row">
                                 <h6>
                                     Address
                                 </h6>
                             </div>
-                            <div class="row">
-                                <div class="col-12 ">
-                                    <mat-form-field class="w-100" appearance="fill">
-                                        <input matInput>
-                                    </mat-form-field>
-                                    <div class="col-12 label">
-                                        <mat-label>Street Address</mat-label>
+                            <section formGroupName="address">
+                                <div class="row">
+                                    <div class="col-12 ">
+                                        <mat-form-field class="w-100" appearance="outline">
+                                            <mat-label>Street Address</mat-label>
+                                            <input matInput formControlName="streetAddress">
+                                        </mat-form-field>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 ">
-                                    <mat-form-field class="w-100" appearance="fill">
-                                        <input matInput>
-                                    </mat-form-field>
-                                    <div class="col-12 label">
-                                        <mat-label>Street Address Line2</mat-label>
+                                <div class="row">
+                                    <div class="col-12 ">
+                                        <mat-form-field class="w-100" appearance="outline">
+                                            <mat-label>Street Address Line2</mat-label>
+                                            <input matInput formControlName="streetAddress2">
+                                        </mat-form-field>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <div class="col-12 ">
+                                            <mat-form-field appearance="outline">
+                                                <mat-label> City</mat-label>
+                                                <input matInput formControlName="city">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="col-12 ">
+                                            <mat-form-field appearance="outline">
+                                                <mat-label>State</mat-label>
+                                                <input matInput formControlName="state">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 ">
+                                        <mat-form-field class="w-100" appearance="outline">
+                                            <mat-label>PostalCode</mat-label>
+                                            <input matInput formControlName="postalCode">
+                                        </mat-form-field>
+                                        <div class="col-12 label">
+                                            <mat-label> Postal/Zipcode</mat-label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <div class="row">
+                                <h6>BG Status</h6>
                             </div>
                             <div class="row">
                                 <div class="col-12 col-md-6">
                                     <div class="col-12 ">
-                                        <mat-form-field appearance="fill">
-                                            <input matInput>
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>BG Status</mat-label>
+                                            <input matInput formControlName="bgStatus">
                                         </mat-form-field>
                                     </div>
-                                    <div class="col-12 label ">
-                                        <mat-label> City</mat-label>
-                                    </div>
+
                                 </div>
                                 <div class="col-12 col-md-6">
-                                    <div class="col-12 ">
-                                        <mat-form-field appearance="fill">
-                                            <input matInput>
+                                    <div class="col-12">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>workLocation</mat-label>
+                                            <input matInput formControlName="workLocation">
                                         </mat-form-field>
                                     </div>
-                                    <div class="col-12 label ">
-                                        <mat-label> State</mat-label>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-12 ">
-                                    <mat-form-field class="w-100" appearance="fill">
-                                        <input matInput>
-                                    </mat-form-field>
-                                    <div class="col-12 label">
-                                        <mat-label> Postal/Zipcode</mat-label>
-                                    </div>
-                                </div>
-                            </div>
+
                         </section>
 
+                    </div>
+
+                    <!-- Equipment Section -->
+                    <h2 class="m-5"> Equipment Preferences</h2>
+
+                    <hr class="solid">
+                    <div class="row m-5 ">
+                        <p>Laptop</p>
+                        <div class="mx-3">
+                            <input type="radio" id="html" name="fav_language" value="HTML">
+                            <label class="mx-3" for="html">Mac</label><br>
+                            <input type="radio" id="css" name="fav_language" value="CSS">
+                            <label class="mx-3" for="Windows">Windows</label><br>
+                        </div>
+
+                    </div>
+                    <div class="row m-5">
+                        <p>Mouse Preference</p>
+                        <div class="mx-3">
+                            <input type="radio" id="html" name="fav_language" value="HTML">
+                            <label class="mx-3" for="html">Wired</label><br>
+                            <input type="radio" id="css" name="fav_language" value="CSS">
+                            <label class="mx-3" for="Windows">Wireless</label><br>
+                        </div>
+                    </div>
+                    <div class="row m-5 ">
+                        <p>Keyboard Preference</p>
+                        <div class="mx-3">
+                            <input type="radio" id="html" name="fav_language" value="HTML">
+                            <label class="mx-3" for="html">Wired</label><br>
+                            <input type="radio" id="css" name="fav_language" value="CSS">
+                            <label class="mx-3" for="Windows">Wireless</label><br>
+                        </div>
+
+                    </div>
+                    <div class="row m-5">
+                        <div class="my-2">Please upload a photo of you to be used on your badge</div>
+                        <div>
+                            <div class=" my-3 custom-file">
+                                <input type="file" class="custom-file-input" id="customFile">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Equipment Section Ends -->
+                    <!-- Policies & Orientation -->
+                    <h2 class="m-5"> Policies & Orientation</h2>
+
+                    <hr class="solid">
+                    <div class="form-group row">
+                        <div class="m-5 col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                <label class="form-check-label" for="gridCheck1">
+                                    I have reviwed key Policies
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                <label class="form-check-label" for="gridCheck1">
+                                    I have reviwed General Admin Policies
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                <label class="form-check-label" for="gridCheck1">
+                                    I have been given General introduction and Orientation
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Reference docs and guidelines r shared with me
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Policies & Orientation Ends -->
+                    <hr class="solid">
+                    <div class="row w-50 mx-auto my-5 ">
+                        <button type="submit" class="btn btn-success py-2">Submit</button>
                     </div>
                 </form>
             </section>
             <!-- Form Section Ends  -->
-            <!-- Equipment Section -->
-            <h2 class="m-5"> Equipment Preferences</h2>
 
-            <hr class="solid">
-            <div class="row m-5 ">
-                <p>Laptop</p>
-                <div class="mx-3">
-                    <input type="radio" id="html" name="fav_language" value="HTML">
-                    <label class="mx-3" for="html">Mac</label><br>
-                    <input type="radio" id="css" name="fav_language" value="CSS">
-                    <label class="mx-3" for="Windows">Windows</label><br>
-                </div>
-
-            </div>
-            <div class="row m-5">
-                <p>Mouse Preference</p>
-                <div class="mx-3">
-                    <input type="radio" id="html" name="fav_language" value="HTML">
-                    <label class="mx-3" for="html">Wired</label><br>
-                    <input type="radio" id="css" name="fav_language" value="CSS">
-                    <label class="mx-3" for="Windows">Wireless</label><br>
-                </div>
-            </div>
-            <div class="row m-5 ">
-                <p>Keyboard Preference</p>
-                <div class="mx-3">
-                    <input type="radio" id="html" name="fav_language" value="HTML">
-                    <label class="mx-3" for="html">Wired</label><br>
-                    <input type="radio" id="css" name="fav_language" value="CSS">
-                    <label class="mx-3" for="Windows">Wireless</label><br>
-                </div>
-
-            </div>
-            <div class="row m-5">
-                <div class="my-2">Please upload a photo of you to be used on your badge</div>
-                <div>
-                    <div class=" my-3 custom-file">
-                        <input type="file" class="custom-file-input" id="customFile">
-                    </div>
-                </div>
-            </div>
-            <!-- Equipment Section Ends -->
-            <!-- Policies & Orientation -->
-            <h2 class="m-5"> Policies & Orientation</h2>
-
-            <hr class="solid">
-            <div class="form-group row">
-                <div class="m-5 col-sm-10">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck1">
-                        <label class="form-check-label" for="gridCheck1">
-                            I have reviwed key Policies
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck1">
-                        <label class="form-check-label" for="gridCheck1">
-                            I have reviwed General Admin Policies
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck1">
-                        <label class="form-check-label" for="gridCheck1">
-                            I have been given General introduction and Orientation
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck1">
-                        <label class="form-check-label" for="gridCheck1">
-                            Reference docs and guidelines r shared with me
-                        </label>
-                    </div>
-             
-                </div>
-                  </div>
-            <!-- Policies & Orientation Ends -->
-            <hr class="solid">
-<div class="row w-25 mx-auto my-5 ">
-    <button type="submit" class="btn btn-success py-2">Submit</button>
-</div>
         </div>
     </section>
 

@@ -1,0 +1,8 @@
+.contactbg {
+    height: 100vh;
+    background-image: url(src/assets/contactusbg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;}
+    .matwidth {
+        width: 91%;
+    }
